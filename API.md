@@ -31,7 +31,7 @@ Miro Lacoste
     - title: (string)
     - creationDate: (string)
 
-- validierung:
+- Validierung:
     - schaut ob der Benutzer eingeloggt ist
     - erstellt die neue Task
     - id wird automatisch gesetzt
@@ -48,7 +48,7 @@ Miro Lacoste
 - Erwartete werte:
     - id (string)
 
-- validierung:
+- Validierung:
     - schaut ob der Benutzer eingeloggt ist
     - filtert die Task mit der gegebnene id
 
@@ -89,3 +89,45 @@ Miro Lacoste
 
 ## Login
 
+- HTTP Methode: POST
+- pfad: /login
+- Erwartete werte:
+    - mail (string)
+    - password (string)
+
+- Validierung:
+    - Vergleicht die Credentials
+    - Loggt den Nutzer ein
+
+- Rückgabewert:
+    - session-mail bei erfolg
+    - error bei falschem password
+    - Statuscodes: 200, 401
+
+## Verify
+
+- HTTP Methode: GET
+- pfad: /verfy
+- Erwartete werte:
+    - keine
+
+- Validierung:
+    - Prüft ob die session-mail vorhanden ist
+
+- Rückgabewert:
+    - Rückgabe der session-mail bei erfolg
+    - Error bei misserfolg
+    - Statuscodes: 200, 401
+
+## Logout
+
+- HTTP Methode: DELETE
+- pfad: /logout
+- Erwartete werte:
+    - keine
+
+- Validierung:
+    - setzt die session-mail auf null
+
+- Rückgabewert:
+    - Statuscodes: 204, 401
