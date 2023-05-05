@@ -1,7 +1,14 @@
-import express from "express";
+import express, { request } from "express";
+import session from "express-session";
 
 const app = express();
 const port = 3000;
+
+/* Inspiriert von Input */
+const Credentials = {
+    mail: "",
+    password: "m295"
+};
 
 /* Testdaten mit GPT generiert */
 let tasks = [
@@ -29,6 +36,15 @@ let tasks = [
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+/* Von Unterlagen kopiert */
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {}
+}));
+
+
 app.get('/tasks', function (req, res) {
     res.status(200).send(tasks);
 });
@@ -36,7 +52,7 @@ app.get('/tasks', function (req, res) {
 /* Inspiriert von von eigenen Unterlagen */
 app.post('/tasks', function (req, res) {
     const id = tasks.length + 1;
-    const title = req.query.title;
+    const title = req.body.title;
     const newTask = {
         id: id,
         title: title,
@@ -66,9 +82,9 @@ app.put('/tasks/:id', function (req, res) {
     if (task) {
         const updatedTask = {
             id: task.id,
-            titel: req.query.title,
-            creationDate: req.query.creationDate,
-            completionDate: req.query.completionDate
+            title: req.body.title,
+            creationDate: req.body.creationDate,
+            completionDate: req.body.completionDate
         };
         tasks = tasks.map(task => task.id === id ? updatedTask : task);
         res.status(200).send(updatedTask);
@@ -91,6 +107,19 @@ app.delete('/tasks/:id', function (req, res) {
         res.status(200).send(deletedfile)
     } else {
         res.status(404)
+    }
+});
+
+/* Stark inspiriert von Input */
+app.post('/login', function (req, res) {
+    const { mail, password } = req.body;
+    if (password === Credentials.password) {
+        
+        req.session.email = mail;
+        
+        res.status(200).json({ mail: mail });
+    } else {
+        res.status(401).json({ Failed: 'Login failed!' });
     }
 });
 
