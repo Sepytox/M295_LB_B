@@ -30,8 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/tasks', function (req, res) {
-    res.send(tasks);
-    res.sendStatus(200);
+    res.status(200).send(tasks);
 });
 
 /* Inspiriert von von eigenen Unterlagen */
@@ -85,7 +84,14 @@ function remove(id) {
 
 app.delete('/tasks/:id', function (req, res) {
     const id = req.params.id;
-    
+    const task = tasks.find(task => task.id === id);
+    if (task) {
+        const deletefile = task
+        remove(task.id)
+        res.status(200).send(deletefile)
+    } else {
+        res.status(404)
+    }
 });
 
 app.listen(port, function () {
