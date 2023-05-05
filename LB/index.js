@@ -1,7 +1,7 @@
 import express from "express";
 
 const app = express();
-const port = 3000;
+const port = 3080;
 
 /* Testdaten mit GPT generiert */
 let tasks = [
@@ -26,8 +26,12 @@ let tasks = [
   ];
   
 
-app.use(express.json);
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get('/', function (req, res) {
+    res.send("Funktioniert")
+});
 
 app.get('/tasks', function (req, res) {
     res.send(tasks);
