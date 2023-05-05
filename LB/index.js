@@ -119,7 +119,25 @@ app.post('/login', function (req, res) {
         
         res.status(200).json({ mail: mail });
     } else {
-        res.status(401).json({ Failed: 'Login failed!' });
+        res.status(401).json({ Failed: 'login failed!' });
+    }
+});
+
+/* Stark inspiriert von Unterlagen */
+app.get('/verify', function (req, res) {
+    if (req.session.email) {
+        res.status(200).send({ mail: req.session.email });
+    } else {
+        res.status(401).send({ Error: 'not logged in!' });
+    }
+});
+
+app.delete('/logout', function (req, res) {
+    if (req.session.email) {
+        req.session.email = null;
+        res.sendStatus(204);
+    } else {
+        res.sendStatus(401);
     }
 });
 
