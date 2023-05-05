@@ -1,0 +1,102 @@
+commit 1a68c07a1f4b3f4cbd0128309a66f6e0e5961b8b
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 14:49:04 2023 +0000
+
+    Edited: API.md
+    finsihed dokumentation
+
+commit 76235eae08c5b23f93ac9303989fde64c9817fd9
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 14:38:32 2023 +0000
+
+    Edited API:MD
+
+commit 77b218cc047ddd6cdd9b7f3f92e3d6bba369f01c
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 13:52:33 2023 +0000
+
+    Edited: index.js
+    require Titel for new Task
+
+commit e052c67af3674db863297873dc6eb238f82e452b
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 13:32:33 2023 +0000
+
+    Edited: index.js
+    Require login
+
+commit cf9a7c1d7513a0cebe6b2538248942ff7195a9b1
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 13:16:06 2023 +0000
+
+    Added API.md
+    Edited: index.js, added Logout
+
+commit 54a8c7ae2c8e556b3a9c95dc4eb2e3d80256cfda
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 12:21:22 2023 +0000
+
+    Editen Index.js
+    added: Login
+
+commit 57fb2a1931718c74170024df20b79c5680c7dc90
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 09:45:44 2023 +0000
+
+    Edited: Index.js
+    Small changes
+
+commit cfaa63fc35191b022775a778117a271e4a6673fa
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 09:42:22 2023 +0000
+
+    Edited Index.js:
+    Added: DELETE
+
+commit c613504dbc95d5e399fdce0dbacd714bfd0b4b21
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 09:32:47 2023 +0000
+
+    PUT, GET, POST Function added in index
+
+commit a659354b3ea67d1f474920da6e6a2c5efaf33b06
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 08:39:26 2023 +0000
+
+    Edited index.js problem solved
+
+commit d7d4bd9e3edc76af88e32819a93da7217217e6a7
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 07:48:51 2023 +0000
+
+    Added Get Function, Listener
+
+commit 823477496d3848d6efce4c9746c0bb5ae23b4860
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 06:59:37 2023 +0000
+
+    Modified index.js
+
+commit db012b723a2f9897860e7eef2690e498b6577d80
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 06:40:14 2023 +0000
+
+    Added Index.js
+
+commit 9618370c93a25b2a74edb949699c86483f62a9ec
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 06:34:06 2023 +0000
+
+    added gitignore
+
+commit 2ffbe5c56e0472317ca980a49bed0d0a59d31b8a
+Author: Sepy <lacostem@bzz.ch>
+Date:   Fri May 5 06:33:19 2023 +0000
+
+    Initialized
+
+commit 054aa1fb6be1bc6423cbf67d3d6014db7c353819
+Author: Miro Lacoste <95412182+Sepytox@users.noreply.github.com>
+Date:   Fri May 5 08:19:38 2023 +0200
+
+    Initial commit
