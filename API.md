@@ -8,14 +8,31 @@
 ## Autor
 Miro Lacoste
 
+## Hilfsmittel
+- teilweise mit Copilot von Github geschrieben
+
 ## Endpunkte
 
-**GET /tasks:** Gibt alle Tasks als JSON zurück
+**GET /tasks:** <br>
+Gibt alle Tasks als JSON zurück
 
-**GET /tasks/:id:** Gibt einen Task mit der entsprechenden ID als JSON zurück
+**GET /tasks/:id:** <br>
+Gibt einen Task mit der entsprechenden ID als JSON zurück
 
-**POST /tasks:** Erstellt einen neuen Task mit den Daten aus dem Body
+**POST /tasks:** <br>
+Erstellt einen neuen Task mit den Daten aus dem Body
 
-**PUT /tasks/:id:** Aktualisiert einen Task mit der entsprechenden ID mit den Daten aus dem Body
+**PUT /tasks/:id:** <br>
+Aktualisiert einen Task mit der entsprechenden ID mit den Daten aus dem Body
 
-**DELETE /tasks/:id:** Löscht einen Task mit der entsprechenden ID
+**DELETE /tasks/:id:** <br>
+Löscht einen Task mit der entsprechenden ID
+
+**POST /login:** <br>
+Loggt einen User ein und gibt ein die mail zurück
+
+**GET /verify:** <br>
+Überprüft das Token und gibt die mail zurück
+
+**DELETE /logout:** <br>
+Loggt einen User aus
