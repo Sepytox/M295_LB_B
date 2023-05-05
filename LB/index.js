@@ -65,7 +65,7 @@ app.post('/tasks', function (req, res) {
     const id = tasks.length + 1;
     const title = req.body.title;
     if (!title) {
-        res.status(406).json({ Error: 'bitte geben sie einen titel ein!' });
+        res.status(401).json({ Error: 'bitte geben sie einen titel ein!' });
         return;
     }
     const author = req.session.email;

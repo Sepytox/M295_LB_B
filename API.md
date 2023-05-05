@@ -8,31 +8,84 @@
 ## Autor
 Miro Lacoste
 
-## Hilfsmittel
-- teilweise mit Copilot von Github geschrieben
 
 ## Endpunkte
 
-**GET /tasks:** <br>
-Gibt alle Tasks als JSON zurück
+## Tasks
 
-**GET /tasks/:id:** <br>
-Gibt einen Task mit der entsprechenden ID als JSON zurück
+- HTTP Methode: GET
+- Pfad: /tasks
+- Erwartete werte: keine
 
-**POST /tasks:** <br>
-Erstellt einen neuen Task mit den Daten aus dem Body
+- validierung:
+    - schaut ob der Benutzer eingeloggt ist
 
-**PUT /tasks/:id:** <br>
-Aktualisiert einen Task mit der entsprechenden ID mit den Daten aus dem Body
+- Rückgabewert:
+    - JSON-File mit allen Tasks
+    - Statuscodes: 200, 401
 
-**DELETE /tasks/:id:** <br>
-Löscht einen Task mit der entsprechenden ID
+- HTTP Methode: POST
+- Pfad: /tasks
+- Erwartete werte:
+    - id (string)
+    - title: (string)
+    - creationDate: (string)
 
-**POST /login:** <br>
-Loggt einen User ein und gibt ein die mail zurück
+- validierung:
+    - schaut ob der Benutzer eingeloggt ist
+    - erstellt die neue Task
+    - id wird automatisch gesetzt
+    - creationDate wird automatisch gesetzt
+    - completionDate wird automatisch auf Null gesetzt
+    - author wird mit der Session mail gesetzt
 
-**GET /verify:** <br>
-Überprüft das Token und gibt die mail zurück
+- Rückgabewert:
+    - JSON-File mit der neue Task
+    - Statuscodes: 401, 201
 
-**DELETE /logout:** <br>
-Loggt einen User aus
+- HTTP Methode: GET
+- pfad: /tasks/:id
+- Erwartete werte:
+    - id (string)
+
+- validierung:
+    - schaut ob der Benutzer eingeloggt ist
+    - filtert die Task mit der gegebnene id
+
+- Rückgabewert:
+    - JSON-File mit der Task
+    - Statuscode: 200, 401, 404
+
+- HTTP Methode: PUT
+- pfad: /tasks/:id
+- Erwartete werte:
+    - id (string)
+    - title (string)
+    - creationDate (strin)
+    - completionDate (string)
+
+- Validierung:
+    - schaut ob der Benutzer eingeloggt ist
+    - filtert die Task aus der Liste mit der gegebenen id
+    - ersetzt die werte in der Task durch die gebbenen werte
+
+- Rückgabewert:
+    - JSON-File mit der bearbeiteten Task
+    - Statuscodes: 200, 401, 404
+
+- HTTP Methode: DELETE
+- pfad: /tasks/:id
+- Erwartete werte:
+    - id (string)
+
+- Validierung:
+    - schaut ob der Benutzer eingeloggt ist
+    - filtert die Task aus der liste mit der gegebenen id
+    - löscht die task aus der Liste raus
+
+- Rückgabewert:
+    - JSON-File mit der gelöschten Task
+    - Statuscodes: 401, 200, 404
+
+## Login
+
