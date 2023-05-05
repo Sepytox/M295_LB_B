@@ -1,7 +1,7 @@
 import express from "express";
 
 const app = express();
-const port = 3080;
+const port = 3000;
 
 /* Testdaten mit GPT generiert */
 let tasks = [
@@ -86,9 +86,9 @@ app.delete('/tasks/:id', function (req, res) {
     const id = req.params.id;
     const task = tasks.find(task => task.id === id);
     if (task) {
-        const deletefile = task
+        const deletedfile = task
         remove(task.id)
-        res.status(200).send(deletefile)
+        res.status(200).send(deletedfile)
     } else {
         res.status(404)
     }
